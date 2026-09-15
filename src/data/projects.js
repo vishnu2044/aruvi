@@ -32,6 +32,57 @@ const projects = [
     url: "https://perfume-site-demo.vercel.app/",
     color: "#1B4332",
   },
+  {
+    id: 2,
+    title: "Artisan Cafe",
+    category: "Hospitality & Food Service",
+    description: "A warm and inviting digital presence for a local artisanal cafe and coffee shop.",
+    targetClient: "Local coffee shop or boutique cafe",
+    about: "We designed a digital storefront that captures the cozy atmosphere of a local cafe. The site features an interactive menu, location details, and a warm color palette to invite customers in.",
+    specialties: [
+      "Interactive Menu",
+      "Mobile-Friendly Layout",
+      "Warm Aesthetics",
+      "Location Integration"
+    ],
+    image: "/projects/cafe-demo.webp",
+    url: "https://cafe-demo-rust.vercel.app/",
+    color: "#8B4513",
+  },
+  {
+    id: 3,
+    title: "Premium Real Estate",
+    category: "Real Estate & Property Management",
+    description: "A sleek and modern property listing platform for a premium real estate agency.",
+    targetClient: "Luxury real estate agency or broker",
+    about: "This platform was built to showcase high-end properties with stunning imagery and easy-to-use search functionality. The focus is on providing a seamless browsing experience for potential buyers and sellers.",
+    specialties: [
+      "Property Showcases",
+      "High-Resolution Image Galleries",
+      "Responsive Design",
+      "Lead Generation"
+    ],
+    image: "/projects/real-estate-demo.webp",
+    url: "https://real-estate-demo-zeta-six.vercel.app/",
+    color: "#2C3E50",
+  },
+  {
+    id: 4,
+    title: "Elevate Fitness Gym",
+    category: "Health & Fitness",
+    description: "An energetic and dynamic website for a modern fitness center and gym.",
+    targetClient: "Local gym, fitness center, or personal trainer",
+    about: "We created a high-energy digital presence for a fitness center, highlighting their facilities, classes, and membership plans. The site uses bold typography and dynamic layouts to inspire action and boost conversions.",
+    specialties: [
+      "Class Schedules & Highlights",
+      "Membership Conversion Focus",
+      "Bold Typography",
+      "Dynamic Layouts"
+    ],
+    image: "/projects/gym-demo.webp",
+    url: "https://gym-demo-cyan-iota.vercel.app/",
+    color: "#E63946",
+  }
 ];
 
 export default projects;
