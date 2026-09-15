@@ -5,11 +5,11 @@ import { scrollToSection } from "../utils/helpers";
 import logoImg from "../assets/logos/logo.png";
 
 const navLinks = [
-  { label: "Services", id: "services" },
-  { label: "Work", id: "portfolio" },
-  { label: "Process", id: "process" },
-  { label: "About", id: "about" },
-  { label: "Contact", id: "contact" },
+  { label: "Services", path: "/services" },
+  { label: "Work", path: "/work" },
+  { label: "Process", path: "/process" },
+  { label: "About", path: "/#about" },
+  { label: "Contact", path: "/contact" },
 ];
 
 export default function Navbar() {
@@ -17,7 +17,6 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
-  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -32,17 +31,11 @@ export default function Navbar() {
   }, [mobileOpen]);
 
   const handleNav = useCallback(
-    (id) => {
+    (path) => {
       setMobileOpen(false);
-      if (isHome) {
-        // Already on home — smooth scroll
-        setTimeout(() => scrollToSection(id), 100);
-      } else {
-        // Navigate to home with hash so the section is in view
-        navigate(`/#${id}`);
-      }
+      navigate(path);
     },
-    [isHome, navigate]
+    [navigate]
   );
 
   // After navigating to /#section from an inner page, scroll to the section
@@ -81,9 +74,9 @@ export default function Navbar() {
         <div className="navbar-links">
           {navLinks.map((link) => (
             <button
-              key={link.id}
+              key={link.path}
               className="navbar-link"
-              onClick={() => handleNav(link.id)}
+              onClick={() => handleNav(link.path)}
               type="button"
             >
               {link.label}
@@ -91,7 +84,7 @@ export default function Navbar() {
           ))}
           <button
             className="navbar-cta"
-            onClick={() => handleNav("contact")}
+            onClick={() => handleNav("/contact")}
             type="button"
           >
             Let's Build
@@ -116,9 +109,9 @@ export default function Navbar() {
       <div className={`mobile-menu${mobileOpen ? " open" : ""}`} aria-hidden={!mobileOpen}>
         {navLinks.map((link) => (
           <button
-            key={link.id}
+            key={link.path}
             className="mobile-menu-link"
-            onClick={() => handleNav(link.id)}
+            onClick={() => handleNav(link.path)}
             tabIndex={mobileOpen ? 0 : -1}
             type="button"
           >
@@ -127,7 +120,7 @@ export default function Navbar() {
         ))}
         <button
           className="mobile-menu-cta"
-          onClick={() => handleNav("contact")}
+          onClick={() => handleNav("/contact")}
           tabIndex={mobileOpen ? 0 : -1}
           type="button"
         >

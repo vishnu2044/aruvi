@@ -16,16 +16,16 @@ export default function Portfolio() {
         <div className="section-header-row reveal" ref={headerRef}>
           <div>
             <span className="section-label">Portfolio</span>
-            <h2 className="section-title">Selected work</h2>
+            <h2 className="section-title">Our Work</h2>
           </div>
           <Link to="/work" className="section-header-link">
             View all work <HiArrowUpRight />
           </Link>
         </div>
 
-        <div className="portfolio-home-grid">
-          {preview.map((project) => (
-            <HomeProjectCard key={project.id} project={project} />
+        <div className="portfolio-home-grid" style={{ marginTop: '40px' }}>
+          {preview.map((project, i) => (
+            <HomeProjectCard key={project.id} project={project} index={i} />
           ))}
         </div>
       </div>
@@ -33,12 +33,15 @@ export default function Portfolio() {
   );
 }
 
-function HomeProjectCard({ project }) {
+function HomeProjectCard({ project, index }) {
   const ref = useReveal();
 
   return (
     <article className="home-project-card reveal" ref={ref}>
-      <div className="home-project-card-image">
+      <div 
+        className="home-project-card-image"
+        style={{ backgroundColor: `${project.color}15` }}
+      >
         {project.image ? (
           <img
             src={project.image}
@@ -47,45 +50,43 @@ function HomeProjectCard({ project }) {
             decoding="async"
           />
         ) : (
-          <ProjectPlaceholder project={project} />
+          <div
+            className="project-placeholder"
+            style={{
+              background: `linear-gradient(135deg, ${project.color}22, ${project.color}08)`,
+            }}
+          >
+            <div className="project-placeholder-mockup">
+              <div className="project-placeholder-toolbar">
+                <span className="project-placeholder-toolbar-dot"></span>
+                <span className="project-placeholder-toolbar-dot"></span>
+                <span className="project-placeholder-toolbar-dot"></span>
+              </div>
+              <div className="project-placeholder-content">
+                <div className="project-placeholder-bar" style={{ background: `${project.color}33` }}></div>
+                <div className="project-placeholder-bar" style={{ background: `${project.color}22` }}></div>
+                <div className="project-placeholder-bar" style={{ background: `${project.color}18` }}></div>
+              </div>
+            </div>
+          </div>
         )}
       </div>
+      
       <div className="home-project-card-info">
-        <span className="project-card-category">{project.category}</span>
+        <div className="work-detail-card-meta">
+          <span className="project-card-category">{project.category}</span>
+        </div>
+        
         <h3 className="home-project-card-title">{project.title}</h3>
-        <a
-          href={project.url}
+        
+        <Link
+          to="/work"
           className="home-project-card-link"
-          target={project.url !== "#" ? "_blank" : undefined}
-          rel={project.url !== "#" ? "noopener noreferrer" : undefined}
-          aria-label={`View ${project.title} project`}
+          aria-label={`View ${project.title} details`}
         >
-          View Project <HiArrowUpRight />
-        </a>
+          View Details <HiArrowUpRight />
+        </Link>
       </div>
     </article>
-  );
-}
-
-function ProjectPlaceholder({ project }) {
-  return (
-    <div
-      className="project-placeholder"
-      style={{ background: `linear-gradient(135deg, ${project.color}22, ${project.color}08)` }}
-    >
-      <div className="project-placeholder-mockup">
-        <div className="project-placeholder-toolbar">
-          <span className="project-placeholder-toolbar-dot"></span>
-          <span className="project-placeholder-toolbar-dot"></span>
-          <span className="project-placeholder-toolbar-dot"></span>
-        </div>
-        <div className="project-placeholder-content">
-          <div className="project-placeholder-bar" style={{ background: `${project.color}33` }}></div>
-          <div className="project-placeholder-bar" style={{ background: `${project.color}22` }}></div>
-          <div className="project-placeholder-bar" style={{ background: `${project.color}18` }}></div>
-          <div className="project-placeholder-bar" style={{ background: `${project.color}10` }}></div>
-        </div>
-      </div>
-    </div>
   );
 }
