@@ -5,6 +5,7 @@ import { scrollToSection } from "../utils/helpers";
 import logoImg from "../assets/logos/logo.png";
 
 const navLinks = [
+  { label: "Home", path: "/" },
   { label: "Services", path: "/services" },
   { label: "Work", path: "/work" },
   { label: "Process", path: "/process" },

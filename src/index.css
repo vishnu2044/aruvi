@@ -25,7 +25,7 @@
   --radius-lg: 12px;
   --radius-xl: 16px;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --max-width: 1200px;
+  --max-width: 1440px;
   --nav-height: 72px;
 }
 
@@ -574,6 +574,9 @@ button {
   color: var(--text-tertiary);
   font-weight: 500;
   letter-spacing: 0.03em;
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  margin-top: 16px;
 }
 
 .hero-trust span {
@@ -584,10 +587,10 @@ button {
 
 .hero-trust span::before {
   content: "";
-  width: 4px;
-  height: 4px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  background: var(--accent-dark);
+  background: var(--accent);
 }
 
 /* Hero Visual */
@@ -2748,14 +2751,14 @@ button {
    ============================================= */
 .industries {
   background: var(--bg-surface);
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  padding: 80px 0;
 }
 
 .industries-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  gap: 24px;
+  margin-top: 48px;
 }
 
 .industry-card {
@@ -2763,83 +2766,79 @@ button {
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  padding: 20px 12px;
+  gap: 16px;
+  padding: 32px 24px;
   background: var(--bg);
   border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius-xl);
   text-align: center;
-  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+  transition: all var(--transition);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.02);
 }
 
 .industry-card:hover {
   border-color: var(--accent);
-  box-shadow: 0 4px 20px var(--accent-glow);
-  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(25, 181, 197, 0.1);
+  transform: translateY(-4px);
 }
 
 .industry-card-emoji {
-  font-size: 1.75rem;
-  line-height: 1;
-  display: block;
+  font-size: 1.5rem;
+  width: 56px;
+  height: 56px;
+  background: var(--bg-surface-2);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.industry-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
 }
 
 .industry-card-label {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-secondary);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
   line-height: 1.3;
 }
 
 /* Tablet: 2 columns */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .industries-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 
   .industry-card {
-    padding: 16px 10px;
+    padding: 24px 16px;
   }
 
   .industry-card-emoji {
-    font-size: 1.5rem;
+    width: 48px;
+    height: 48px;
+    font-size: 1.4rem;
   }
 
   .industry-card-label {
-    font-size: 0.75rem;
+    font-size: 1rem;
   }
 }
 
-/* Mobile: 2 columns */
+/* Mobile: 1 column */
 @media (max-width: 480px) {
   .industries-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .industry-card {
-    padding: 18px 10px;
-    gap: 8px;
-  }
-
-  .industry-card-emoji {
-    font-size: 1.6rem;
-  }
-
-  .industry-card-label {
-    font-size: 0.78rem;
-  }
-}
-
-/* Very small screens */
-@media (max-width: 374px) {
-  .industries-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
-  }
-
-  .industry-card {
-    padding: 14px 8px;
+    padding: 24px 16px;
   }
 }
 
@@ -3661,8 +3660,6 @@ html:has(.home-snap-container) {
    ========================================= */
 .trust-strip {
   background: var(--bg-surface-2);
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
   padding: 16px 0;
   overflow-x: auto;
   white-space: nowrap;
@@ -3675,7 +3672,7 @@ html:has(.home-snap-container) {
 .trust-strip-list {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 32px;
   list-style: none;
   padding: 0;
@@ -3685,9 +3682,9 @@ html:has(.home-snap-container) {
 .trust-strip-item {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.9rem;
-  color: var(--text-secondary);
+  gap: 12px;
+  font-size: 0.95rem;
+  color: var(--accent-dark);
   font-weight: 500;
 }
 
@@ -3803,6 +3800,20 @@ html:has(.home-snap-container) {
   margin: 0;
 }
 
+.industry-card-label {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+.industry-card-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin: 0;
+}
+
 /* =========================================
    FAQ
    ========================================= */
@@ -3850,8 +3861,17 @@ html:has(.home-snap-container) {
 }
 
 .faq-answer-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.faq-item.is-open .faq-answer-wrapper {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer-inner {
   overflow: hidden;
-  transition: height 0.3s ease;
 }
 
 .faq-answer {

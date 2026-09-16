@@ -52,17 +52,7 @@ export default function Faq() {
 
 function FaqItem({ faq, index }) {
   const [isOpen, setIsOpen] = useState(false);
-  const contentRef = useRef(null);
-  const [height, setHeight] = useState(0);
   const revealRef = useReveal();
-
-  useEffect(() => {
-    if (isOpen && contentRef.current) {
-      setHeight(contentRef.current.scrollHeight);
-    } else {
-      setHeight(0);
-    }
-  }, [isOpen]);
 
   return (
     <div 
@@ -82,11 +72,12 @@ function FaqItem({ faq, index }) {
       </button>
       <div 
         className="faq-answer-wrapper" 
-        style={{ height: `${height}px` }}
         aria-hidden={!isOpen}
       >
-        <div className="faq-answer" ref={contentRef}>
-          {faq.answer}
+        <div className="faq-answer-inner">
+          <div className="faq-answer">
+            {faq.answer}
+          </div>
         </div>
       </div>
     </div>

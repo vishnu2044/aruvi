@@ -39,11 +39,8 @@ export default function Hero() {
 
           <div className="hero-trust" aria-label="Services offered">
             <span>Business Websites</span>
-            <span>·</span>
             <span>Landing Pages</span>
-            <span>·</span>
             <span>Portfolio Websites</span>
-            <span>·</span>
             <span>Website Redesigns</span>
           </div>
         </div>

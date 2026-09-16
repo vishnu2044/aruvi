@@ -82,6 +82,23 @@ const projects = [
     image: "/projects/gym-demo.webp",
     url: "https://gym-demo-cyan-iota.vercel.app/",
     color: "#E63946",
+  },
+  {
+    id: 5,
+    title: "Photography Portfolio",
+    category: "Creative & Photography",
+    description: "A visually striking and elegant portfolio designed to showcase high-quality photography and visual arts.",
+    targetClient: "Photographers, artists, and creative professionals",
+    about: "We designed a minimalist, immersive portfolio that lets the photography take center stage. Featuring seamless masonry galleries, subtle scroll animations, and optimized high-resolution image loading, it offers a premium viewing experience across all devices.",
+    specialties: [
+      "Masonry Image Galleries",
+      "Immersive Dark Mode",
+      "High-Resolution Optimization",
+      "Minimalist Design"
+    ],
+    image: "/projects/photographer-demo.webp",
+    url: "https://photography-portfolio-orpin-omega.vercel.app/",
+    color: "#1A1A1A",
   }
 ];
 
