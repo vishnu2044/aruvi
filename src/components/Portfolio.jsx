@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { HiArrowUpRight } from "react-icons/hi2";
+import { HiArrowRight } from "react-icons/hi2";
 import projects from "../data/projects";
 import useReveal from "../hooks/useReveal";
 
@@ -16,10 +16,13 @@ export default function Portfolio() {
         <div className="section-header-row reveal" ref={headerRef}>
           <div>
             <span className="section-label">Portfolio</span>
-            <h2 className="section-title">Our Work</h2>
+            <h2 className="section-title">Websites I've built</h2>
+            <p className="section-subtitle">
+              Real examples across different industries, designed to help businesses present themselves professionally online.
+            </p>
           </div>
           <Link to="/work" className="section-header-link">
-            View all work <HiArrowUpRight />
+            View all work <HiArrowRight />
           </Link>
         </div>
 
@@ -33,7 +36,7 @@ export default function Portfolio() {
   );
 }
 
-function HomeProjectCard({ project, index }) {
+function HomeProjectCard({ project }) {
   const ref = useReveal();
 
   return (
@@ -79,12 +82,16 @@ function HomeProjectCard({ project, index }) {
         
         <h3 className="home-project-card-title">{project.title}</h3>
         
+        <p className="home-project-card-description" style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: '16px' }}>
+          {project.description}
+        </p>
+
         <Link
           to="/work"
           className="home-project-card-link"
           aria-label={`View ${project.title} details`}
         >
-          View Details <HiArrowUpRight />
+          View Details <HiArrowRight />
         </Link>
       </div>
     </article>

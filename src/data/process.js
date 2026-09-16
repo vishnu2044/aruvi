@@ -3,28 +3,28 @@ const process = [
     number: "01",
     title: "Tell me about your business",
     description:
-      "We discuss your business objectives, target market, competitors, and what concrete results you need the website to deliver.",
+      "We discuss your business, services, customers, competitors and what you want your website to achieve.",
     tag: "Discovery & Scope",
   },
   {
     number: "02",
-    title: "Design & Layout",
+    title: "Design",
     description:
-      "I construct the site wireframe, establish typography and visual tone, and align every element with your brand personality.",
+      "I create the website structure and visual direction around your business and brand.",
     tag: "Wireframing",
   },
   {
     number: "03",
     title: "Build & Refine",
     description:
-      "I code the website with clean, performant standards to guarantee lightning-fast response times on smartphones, tablets, and desktop.",
+      "I develop the website, test it across devices and refine it based on your feedback.",
     tag: "Code & Test",
   },
   {
     number: "04",
-    title: "Launch & Handover",
+    title: "Review & Launch",
     description:
-      "The finished website is hooked up to your custom domain, deployed on secure hosting, tested for live forms, and delivered ready to market.",
+      "Once everything is approved, I prepare the website for launch and help get it live.",
     tag: "Go Live",
   },
 ];

@@ -3628,3 +3628,289 @@ button {
   }
 }
 
+
+/* --- Scroll Snapping for Homepage --- */
+html:has(.home-snap-container) {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.home-snap-container > section,
+.home-snap-container > footer {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+@media (min-width: 768px) {
+  .home-snap-container > section:not(.hero) {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: var(--nav-height); /* Ensure content isn't hidden behind navbar */
+  }
+}
+
+
+.footer {
+  scroll-snap-align: end;
+}
+
+/* =========================================
+   Trust Strip
+   ========================================= */
+.trust-strip {
+  background: var(--bg-surface-2);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px 0;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.trust-strip::-webkit-scrollbar {
+  display: none;
+}
+
+.trust-strip-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.trust-strip-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.trust-strip-icon {
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .trust-strip-list {
+    justify-content: flex-start;
+    padding: 0 16px;
+  }
+}
+
+/* =========================================
+   What You Get (Features)
+   ========================================= */
+.what-you-get-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.what-you-get-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.3s ease;
+}
+
+.what-you-get-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(9, 43, 58, 0.08);
+  border-color: var(--border-hover);
+}
+
+.what-you-get-icon {
+  font-size: 2.5rem;
+  color: var(--accent);
+  background: var(--bg-surface-2);
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.what-you-get-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.what-you-get-description {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* =========================================
+   Next Steps
+   ========================================= */
+.next-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.next-steps-card {
+  position: relative;
+  padding: 32px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.next-steps-number {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--bg-surface-2);
+  padding: 4px 12px;
+  border-radius: 999px;
+  width: fit-content;
+  margin-bottom: 8px;
+}
+
+.next-steps-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.next-steps-description {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* =========================================
+   FAQ
+   ========================================= */
+.faq-list {
+  max-width: 800px;
+  margin: 48px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover, .faq-item.is-open {
+  border-color: var(--border-hover);
+  box-shadow: 0 4px 12px rgba(9, 43, 58, 0.05);
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  gap: 16px;
+}
+
+.faq-icon {
+  font-size: 1.25rem;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.faq-answer-wrapper {
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.faq-answer {
+  padding: 0 24px 24px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* =========================================
+   Final CTA
+   ========================================= */
+.final-cta {
+  background: var(--bg-surface-2);
+  padding: 80px 0;
+  text-align: center;
+}
+
+.final-cta-content {
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.final-cta-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.final-cta-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.final-cta-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .final-cta-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+  .final-cta-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+

@@ -1,57 +1,30 @@
 import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { HiArrowUpRight } from "react-icons/hi2";
+import { HiArrowRight } from "react-icons/hi2";
 import services from "../data/services";
-import industries from "../data/industries";
 import useReveal from "../hooks/useReveal";
 
 export default function Services() {
   const headerRef = useReveal();
-  const clientsRef = useReveal();
 
   return (
     <section className="section services" id="services">
       <div className="container">
 
-        {/* ── What I Build ── */}
+        {/* 🛠️ What I Build 🛠️ */}
         <div className="section-header-row reveal" ref={headerRef}>
           <div>
             <span className="section-label">Services</span>
             <h2 className="section-title">What I can build for you</h2>
           </div>
           <Link to="/services" className="section-header-link">
-            See all services <HiArrowUpRight />
+            Explore Services <HiArrowRight />
           </Link>
         </div>
 
         <div className="services-grid">
           {services.map((service, i) => (
             <ServiceCard key={service.number} service={service} index={i} />
-          ))}
-        </div>
-
-        {/* ── Who I Build For ── */}
-        <div className="services-clients-divider reveal" ref={clientsRef}>
-          <span className="section-label" style={{ marginBottom: 0 }}>Ideal Clients</span>
-          <p className="services-clients-heading">Built for small businesses</p>
-          <p className="services-clients-sub">
-            Select your industry on the services page to see exactly what I'd build for you.
-          </p>
-        </div>
-
-        <div className="industries-grid">
-          {industries.map((item) => (
-            <Link
-              key={item.id}
-              to={`/services#${item.id}`}
-              className="industry-card industry-card--linked"
-              aria-label={`See services for ${item.label}`}
-            >
-              <span className="industry-card-emoji" aria-hidden="true">
-                {item.emoji}
-              </span>
-              <span className="industry-card-label">{item.label}</span>
-            </Link>
           ))}
         </div>
 

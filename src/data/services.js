@@ -10,7 +10,7 @@ const services = [
     number: "01",
     title: "Business Websites",
     description:
-      "Professional, dependable online homes for small businesses and local companies looking to build credibility and attract more customers.",
+      "Professional websites that explain your business, showcase your services and make it easy for customers to contact you.",
     tagLabel: "Tailored for",
     tags: ["Company websites", "Service businesses", "Consultants", "Agencies"],
     icon: HiOutlineGlobeAlt,
@@ -20,7 +20,7 @@ const services = [
     number: "02",
     title: "Portfolio Websites",
     description:
-      "Curated, visually driven spaces to present high-resolution work, project case studies, and personal credentials that get you hired.",
+      "Professional online portfolios that showcase your work, projects and experience in a way that helps potential clients trust your work.",
     tagLabel: "Tailored for",
     tags: ["Photographers", "Designers", "Architects", "Freelancers"],
     icon: HiOutlineCamera,
@@ -30,7 +30,7 @@ const services = [
     number: "03",
     title: "Landing Pages",
     description:
-      "High-impact, focused single-page funnels engineered to capture customer inquiries, lead submissions, or direct bookings.",
+      "Focused pages designed for campaigns, advertising, lead generation, enquiries or direct bookings.",
     tagLabel: "Key features",
     tags: ["Conversion-optimized", "Sub-second load times", "Crisp messaging hierarchy"],
     icon: HiOutlineBolt,
@@ -40,7 +40,7 @@ const services = [
     number: "04",
     title: "Website Updates & Refresh",
     description:
-      "Targeted revamps, performance tune-ups, mobile-friendliness overhauls, and content restructuring for current websites.",
+      "Improve an existing website with a cleaner design, better mobile experience, faster performance and clearer content.",
     tagLabel: "Key features",
     tags: ["Speed optimization", "Responsive fixes", "Visual modernisation"],
     icon: HiOutlineWrenchScrewdriver,

@@ -7,11 +7,13 @@ import { getWhatsAppUrl } from "../utils/helpers";
 import useReveal from "../hooks/useReveal";
 
 const websiteTypes = [
-  "Business Website",
-  "Portfolio Website",
+  "New Business Website",
+  "Website Redesign",
   "Landing Page",
-  "Website Update / Redesign",
-  "Other",
+  "Portfolio Website",
+  "E-commerce Website",
+  "Booking / Enquiry System",
+  "Something Else",
 ];
 
 const initialForm = {
@@ -222,7 +224,7 @@ export default function Contact() {
                 {/* Website type */}
                 <div className="form-group">
                   <label htmlFor="contact-type">
-                    What type of website do you need? *
+                    What can I help you with? *
                   </label>
                   <select
                     id="contact-type"
@@ -233,7 +235,7 @@ export default function Contact() {
                     aria-invalid={!!errors.type}
                   >
                     <option value="" disabled>
-                      Select a type
+                      Select an option
                     </option>
                     {websiteTypes.map((type) => (
                       <option key={type} value={type}>
@@ -256,12 +258,17 @@ export default function Contact() {
                   <textarea
                     id="contact-message"
                     name="message"
-                    placeholder="Tell me about your project, goals, timeline..."
+                    placeholder="Tell me about your business, what you need, your goals and any timeline you have in mind..."
                     rows="4"
                     value={form.message}
                     onChange={handleChange}
                   />
                 </div>
+
+                {/* Pricing Disclaimer */}
+                <p className="contact-pricing-disclaimer" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', marginBottom: '24px', lineHeight: '1.5' }}>
+                  Every project is different. I'll understand your requirements first and then recommend the right approach for your business.
+                </p>
 
                 {submitError && (
                   <p className="form-error form-error--block" role="alert">

@@ -13,13 +13,11 @@ export default function Hero() {
           </div>
 
           <h1 className="hero-title">
-            Modern websites for businesses that want to grow.
+            Professional websites for small businesses.
           </h1>
 
           <p className="hero-subtitle">
-            I design and build fast, professional websites for small businesses,
-            local brands and independent professionals — without the cost of a
-            large agency.
+            I design and build fast, modern websites that help businesses look professional, attract customers and make it easy for people to get in touch.
           </p>
 
           <div className="hero-buttons">
@@ -35,14 +33,18 @@ export default function Hero() {
               onClick={() => scrollToSection("portfolio")}
               type="button"
             >
-              View My Work
+              View My Work <HiArrowRight />
             </button>
           </div>
 
-          <div className="hero-trust" aria-label="Key qualities">
-            <span>Simple</span>
-            <span>Professional</span>
-            <span>Mobile-first</span>
+          <div className="hero-trust" aria-label="Services offered">
+            <span>Business Websites</span>
+            <span>·</span>
+            <span>Landing Pages</span>
+            <span>·</span>
+            <span>Portfolio Websites</span>
+            <span>·</span>
+            <span>Website Redesigns</span>
           </div>
         </div>
 

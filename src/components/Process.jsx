@@ -1,6 +1,6 @@
 import { useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { HiArrowUpRight } from "react-icons/hi2";
+import { HiArrowRight } from "react-icons/hi2";
 import processSteps from "../data/process";
 import useReveal from "../hooks/useReveal";
 
@@ -13,10 +13,10 @@ export default function Process() {
         <div className="section-header-row reveal" ref={headerRef}>
           <div>
             <span className="section-label">Process</span>
-            <h2 className="section-title">How it works</h2>
+            <h2 className="section-title">How we'll build your website</h2>
           </div>
           <Link to="/process" className="section-header-link">
-            See full process <HiArrowUpRight />
+            See full process <HiArrowRight />
           </Link>
         </div>
 

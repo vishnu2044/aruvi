@@ -2,11 +2,17 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import TrustStrip from "./components/TrustStrip";
+import Industries from "./components/Industries";
 import Services from "./components/Services";
 import Portfolio from "./components/Portfolio";
+import WhatYouGet from "./components/WhatYouGet";
 import Process from "./components/Process";
 import WhyMe from "./components/WhyMe";
+import NextSteps from "./components/NextSteps";
+import Faq from "./components/Faq";
 import About from "./components/About";
+import FinalCTA from "./components/FinalCTA";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
@@ -31,11 +37,18 @@ function HomePage() {
   return (
     <main>
       <Hero />
+      <TrustStrip />
+      <Industries />
       <Services />
       <Portfolio />
+      <WhatYouGet />
       <Process />
       <WhyMe />
+      <NextSteps />
+      <Faq />
       <About />
+      <FinalCTA />
+      {/* Contact remains as an option, but FinalCTA might lead to it. We keep Contact for those scrolling all the way. */}
       <Contact />
     </main>
   );

@@ -14,8 +14,13 @@ export default function About() {
         <div className="about-inner">
           <div className="about-text">
             <p>
-              I'm a freelance web developer focused on creating clean, modern
-              and practical websites for businesses and individuals.
+              Hi, I'm Aruvi.
+            </p>
+            <p>
+              I help small businesses and independent professionals build a professional presence online.
+            </p>
+            <p>
+              I'm a freelance web developer focused on creating clean, modern and practical websites that are easy for customers to use.
             </p>
             <p>
               My approach is simple: understand the business, build something
