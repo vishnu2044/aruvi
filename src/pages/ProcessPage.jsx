@@ -91,7 +91,7 @@ export default function ProcessPage() {
           </div>
           <div className="process-faq">
             {faqs.map((faq, i) => (
-              <FaqItem key={i} faq={faq} />
+              <FaqItem key={i} faq={faq} index={i} />
             ))}
           </div>
         </div>
@@ -148,22 +148,37 @@ function ProcessPageStep({ step, index, isLast }) {
   );
 }
 
-function FaqItem({ faq }) {
+function FaqItem({ faq, index }) {
   const [open, setOpen] = useState(false);
   const ref = useReveal();
 
   return (
-    <div className={`faq-item reveal${open ? " open" : ""}`} ref={ref}>
-      <button
-        className="faq-question"
-        onClick={() => setOpen((p) => !p)}
-        aria-expanded={open}
-        type="button"
-      >
-        {faq.q}
-        <span className="faq-chevron" aria-hidden="true">{open ? "−" : "+"}</span>
-      </button>
-      {open && <p className="faq-answer">{faq.a}</p>}
+    <div 
+      className="reveal" 
+      ref={ref}
+      style={{ transitionDelay: `${(index || 0) * 50}ms` }}
+    >
+      <div className={`faq-item ${open ? 'is-open' : ''}`}>
+        <button
+          className="faq-question"
+          onClick={() => setOpen((p) => !p)}
+          aria-expanded={open}
+          type="button"
+        >
+          <span>{faq.q}</span>
+          <span className="faq-chevron" aria-hidden="true">{open ? "—" : "+"}</span>
+        </button>
+        <div 
+          className="faq-answer-wrapper" 
+          aria-hidden={!open}
+        >
+          <div className="faq-answer-inner">
+            <div className="faq-answer">
+              {faq.a}
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

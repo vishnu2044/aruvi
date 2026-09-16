@@ -56,27 +56,29 @@ function FaqItem({ faq, index }) {
 
   return (
     <div 
-      className={`faq-item reveal ${isOpen ? 'is-open' : ''}`} 
+      className="reveal" 
       ref={revealRef}
       style={{ transitionDelay: `${index * 50}ms` }}
     >
-      <button 
-        className="faq-question" 
-        onClick={() => setIsOpen(!isOpen)}
-        aria-expanded={isOpen}
-      >
-        <span>{faq.question}</span>
-        <span className="faq-icon" aria-hidden="true">
-          {isOpen ? <HiMinus /> : <HiPlus />}
-        </span>
-      </button>
-      <div 
-        className="faq-answer-wrapper" 
-        aria-hidden={!isOpen}
-      >
-        <div className="faq-answer-inner">
-          <div className="faq-answer">
-            {faq.answer}
+      <div className={`faq-item ${isOpen ? 'is-open' : ''}`}>
+        <button 
+          className="faq-question" 
+          onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
+        >
+          <span>{faq.question}</span>
+          <span className="faq-icon" aria-hidden="true">
+            {isOpen ? <HiMinus /> : <HiPlus />}
+          </span>
+        </button>
+        <div 
+          className="faq-answer-wrapper" 
+          aria-hidden={!isOpen}
+        >
+          <div className="faq-answer-inner">
+            <div className="faq-answer">
+              {faq.answer}
+            </div>
           </div>
         </div>
       </div>

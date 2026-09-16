@@ -96,7 +96,7 @@ const projects = [
       "High-Resolution Optimization",
       "Minimalist Design"
     ],
-    image: "/projects/photographer-demo.webp",
+    image: "/projects/photographer-demo.png",
     url: "https://photography-portfolio-orpin-omega.vercel.app/",
     color: "#1A1A1A",
   }

@@ -77,7 +77,7 @@ export default function ServicesPage() {
       </section>
 
       {/* Pricing */}
-      <section className="section" style={{ borderTop: "1px solid var(--border)" }}>
+      {/* <section className="section" style={{ borderTop: "1px solid var(--border)" }}>
         <div className="container">
           <div className="section-header">
             <span className="section-label">Pricing</span>
@@ -96,7 +96,7 @@ export default function ServicesPage() {
             functionality.
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <section className="page-cta-section">

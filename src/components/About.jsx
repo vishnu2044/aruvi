@@ -14,7 +14,7 @@ export default function About() {
         <div className="about-inner">
           <div className="about-text">
             <p>
-              Hi, I'm Aruvi.
+              Hi,
             </p>
             <p>
               I help small businesses and independent professionals build a professional presence online.

@@ -2337,7 +2337,7 @@ button {
 /* Page CTA section */
 .page-cta-section {
   padding: 80px 0;
-  background: var(--navy);
+  background: var(--bg-surface-2);
 }
 
 .page-cta-box {
@@ -2351,12 +2351,12 @@ button {
 .page-cta-box h2 {
   font-size: clamp(1.5rem, 3vw, 2rem);
   font-weight: 700;
-  color: #fff;
+  color: var(--text-primary);
   letter-spacing: -0.02em;
 }
 
 .page-cta-box p {
-  color: rgba(255, 255, 255, 0.65);
+  color: var(--text-secondary);
   font-size: 1rem;
   max-width: 400px;
 }
@@ -3705,9 +3705,21 @@ html:has(.home-snap-container) {
    ========================================= */
 .what-you-get-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-top: 48px;
+}
+
+@media (max-width: 900px) {
+  .what-you-get-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .what-you-get-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .what-you-get-card {
