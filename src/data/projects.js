@@ -99,6 +99,57 @@ const projects = [
     image: "/projects/photographer-demo.png",
     url: "https://photography-portfolio-orpin-omega.vercel.app/",
     color: "#1A1A1A",
+  },
+  {
+    id: 6,
+    title: "Fashion Portfolio",
+    category: "Fashion & Apparel",
+    description: "A sleek, modern portfolio for a fashion brand, featuring dynamic imagery and elegant typography.",
+    targetClient: "Fashion designers, models, and clothing brands",
+    about: "A visually striking digital showcase designed to put fashion front and center. With smooth transitions, high-resolution imagery, and a chic layout, this site brings the runway experience online.",
+    specialties: [
+      "Dynamic Imagery",
+      "Elegant Typography",
+      "Smooth Transitions",
+      "Responsive Layout"
+    ],
+    image: "/projects/fashion-portfolio.png",
+    url: "https://fashion-portfolio-gray.vercel.app/",
+    color: "#A8B2C1",
+  },
+  {
+    id: 7,
+    title: "Sable Law Firm",
+    category: "Legal Services",
+    description: "A professional and trustworthy digital presence for a modern law firm.",
+    targetClient: "Attorneys, law firms, and legal consultants",
+    about: "Built to convey authority and trust, this law firm website features a clean, professional design. It includes detailed practice areas, attorney profiles, and easy consultation booking, all wrapped in a sleek interface.",
+    specialties: [
+      "Professional Design",
+      "Practice Area Showcase",
+      "Consultation Booking",
+      "Trustworthy Aesthetic"
+    ],
+    image: "/projects/law-firm.png",
+    url: "https://law-firm-sable-beta.vercel.app/",
+    color: "#1A365D",
+  },
+  {
+    id: 8,
+    title: "Aura Wellness",
+    category: "Beauty & Wellness",
+    description: "A calming and luxurious website for a premium spa and salon.",
+    targetClient: "Spas, salons, and wellness centers",
+    about: "Designed to evoke a sense of relaxation and luxury, this spa and salon website features a soft color palette, elegant typography, and intuitive service menus. It provides a seamless booking experience for clients seeking wellness services.",
+    specialties: [
+      "Luxurious Aesthetic",
+      "Service Menus",
+      "Soft Color Palette",
+      "Seamless Booking"
+    ],
+    image: "/projects/spa-and-salon.png",
+    url: "https://spa-and-salon-two.vercel.app/",
+    color: "#D4A373",
   }
 ];
 
