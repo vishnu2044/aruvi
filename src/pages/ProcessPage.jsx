@@ -1,34 +1,12 @@
 import { Link } from "react-router-dom";
-import { useRef, useEffect, useState } from "react";
-import { HiArrowLeft, HiArrowUpRight, HiOutlineLightBulb, HiOutlineClock } from "react-icons/hi2";
-import processSteps from "../data/process";
+import { HiArrowLeft, HiArrowUpRight } from "react-icons/hi2";
 import useReveal from "../hooks/useReveal";
-
-const faqs = [
-  {
-    q: "How long does it take to build a website?",
-    a: "Most projects are completed within 2–4 weeks from the discovery call. Simple landing pages can be done in under a week. Timelines depend on content readiness and revision rounds.",
-  },
-  {
-    q: "Do I need to provide the content?",
-    a: "Yes — you know your business best. I'll guide you on what's needed (text, images, logo) and help structure it effectively. I can also recommend copywriting resources if needed.",
-  },
-  {
-    q: "How many revisions do I get?",
-    a: "I include two rounds of revisions in every project. This is usually more than enough to get everything exactly right.",
-  },
-  {
-    q: "Do you handle hosting and domain?",
-    a: "Yes — I set up and configure your hosting and connect your custom domain as part of the launch step. I'll walk you through managing it yourself afterward.",
-  },
-  {
-    q: "What if I need changes after launch?",
-    a: "Minor tweaks are covered for 30 days post-launch. For ongoing changes or updates, I offer flexible maintenance packages.",
-  },
-];
 
 export default function ProcessPage() {
   const headerRef = useReveal();
+  const timelineRef = useReveal();
+  const afterLaunchRef = useReveal();
+  const expectRef = useReveal();
 
   return (
     <div className="page-wrapper">
@@ -39,11 +17,10 @@ export default function ProcessPage() {
             <HiArrowLeft /> Back to Home
           </Link>
           <div className="page-hero-content reveal" ref={headerRef}>
-            <span className="section-label">How It Works</span>
-            <h1 className="page-hero-title">My Process</h1>
+            <span className="section-label">PROCESS</span>
+            <h1 className="page-hero-title">We build it together</h1>
             <p className="page-hero-subtitle">
-              A clear, collaborative workflow from the first conversation to your website going live —
-              with no surprises along the way.
+              A simple, collaborative process from the first conversation to launch — with your ideas and feedback involved throughout.
             </p>
           </div>
         </div>
@@ -52,47 +29,149 @@ export default function ProcessPage() {
       {/* Timeline */}
       <section className="section">
         <div className="container">
-          <div className="process-page-timeline">
-            {processSteps.map((step, i) => (
-              <ProcessPageStep key={step.number} step={step} index={i} isLast={i === processSteps.length - 1} />
-            ))}
+          <div className="process-page-timeline reveal" ref={timelineRef}>
+            
+            <div className="process-timeline-step visible">
+              <div className="process-timeline-left">
+                <div className="process-timeline-number">01</div>
+                <div className="process-timeline-line" aria-hidden="true" />
+              </div>
+              <div className="process-timeline-content">
+                <span className="process-card-tag-dot" aria-hidden="true" />
+                <span className="process-tag-inline">DISCOVER & UNDERSTAND</span>
+                <h3 className="process-timeline-title">Start with your business</h3>
+                <p className="process-timeline-description">We start by understanding your business, services, customers, brand and what you want the website to achieve.</p>
+                <div className="service-type-meta" style={{marginTop: '20px', paddingTop: '0', border: 'none'}}>
+                  <ul className="service-type-list">
+                    <li>Business goals</li>
+                    <li>Target customers</li>
+                    <li>Services & content</li>
+                    <li>Website requirements</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="process-timeline-step visible">
+              <div className="process-timeline-left">
+                <div className="process-timeline-number">02</div>
+                <div className="process-timeline-line" aria-hidden="true" />
+              </div>
+              <div className="process-timeline-content">
+                <span className="process-card-tag-dot" aria-hidden="true" />
+                <span className="process-tag-inline">PLAN TOGETHER</span>
+                <h3 className="process-timeline-title">Shape the website</h3>
+                <p className="process-timeline-description">We work through the structure, content and visual direction so the website feels right for your business before development begins.</p>
+                <div className="service-type-meta" style={{marginTop: '20px', paddingTop: '0', border: 'none'}}>
+                  <ul className="service-type-list">
+                    <li>Page structure</li>
+                    <li>Content organisation</li>
+                    <li>Visual direction</li>
+                    <li>User experience</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="process-timeline-step visible">
+              <div className="process-timeline-left">
+                <div className="process-timeline-number">03</div>
+                <div className="process-timeline-line" aria-hidden="true" />
+              </div>
+              <div className="process-timeline-content">
+                <span className="process-card-tag-dot" aria-hidden="true" />
+                <span className="process-tag-inline">BUILD & REFINE</span>
+                <h3 className="process-timeline-title">Turn the idea into a website</h3>
+                <p className="process-timeline-description">I develop the website, test it across devices and refine the details based on your feedback.</p>
+                <div className="service-type-meta" style={{marginTop: '20px', paddingTop: '0', border: 'none'}}>
+                  <ul className="service-type-list">
+                    <li>Development</li>
+                    <li>Mobile responsiveness</li>
+                    <li>Performance</li>
+                    <li>Feedback & revisions</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="process-timeline-step visible">
+              <div className="process-timeline-left">
+                <div className="process-timeline-number">04</div>
+              </div>
+              <div className="process-timeline-content">
+                <span className="process-card-tag-dot" aria-hidden="true" />
+                <span className="process-tag-inline">LAUNCH & CONTINUE</span>
+                <h3 className="process-timeline-title">Go live — and keep improving</h3>
+                <p className="process-timeline-description">Once everything is approved, I help get the website live. And when your business changes, we can continue updating and improving the website.</p>
+                <div className="service-type-meta" style={{marginTop: '20px', paddingTop: '0', border: 'none'}}>
+                  <ul className="service-type-list">
+                    <li>Final review</li>
+                    <li>Launch</li>
+                    <li>Content updates</li>
+                    <li>Future improvements</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* What to expect callouts */}
+      {/* NEW SECTION — AFTER LAUNCH */}
       <section className="section" style={{ background: "var(--bg-surface)" }}>
         <div className="container">
-          <div className="section-header">
-            <span className="section-label">What to Expect</span>
-            <h2 className="section-title">Working together</h2>
+          <div className="section-header reveal" ref={afterLaunchRef}>
+            <span className="section-label">AFTER LAUNCH</span>
+            <h2 className="section-title">The work doesn't have to stop at launch</h2>
+            <p className="section-subtitle">
+              Your business will change over time. Your website can change with it.
+            </p>
           </div>
-          <div className="process-callouts">
-            <div className="process-callout">
-              <div className="process-callout-icon"><HiOutlineClock /></div>
-              <h3>Typical Timeline</h3>
-              <p>Most projects are completed in <strong>2–4 weeks</strong>. Landing pages can be turned around in under a week. I'll give you a clear timeline estimate after our discovery call.</p>
+          
+          <div className="future-support-grid">
+            <div className="future-support-card">
+              <div className="philosophy-num" style={{marginBottom: '12px'}}>01</div>
+              <h3 className="future-support-title">New Content</h3>
+              <p className="future-support-desc">Add new services, projects, testimonials, images or pages.</p>
             </div>
-            <div className="process-callout">
-              <div className="process-callout-icon"><HiOutlineLightBulb /></div>
-              <h3>What You Need to Prepare</h3>
-              <p>Your <strong>logo, brand colors, and any copy / photos</strong> you have ready. Don't worry if they're not polished — I'll help structure everything into a professional result.</p>
+            <div className="future-support-card">
+              <div className="philosophy-num" style={{marginBottom: '12px'}}>02</div>
+              <h3 className="future-support-title">New Features</h3>
+              <p className="future-support-desc">Introduce bookings, forms, integrations, galleries or other functionality when you need them.</p>
+            </div>
+            <div className="future-support-card">
+              <div className="philosophy-num" style={{marginBottom: '12px'}}>03</div>
+              <h3 className="future-support-title">Improvements</h3>
+              <p className="future-support-desc">Refresh the design, improve performance or make changes based on how your business evolves.</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="section">
+      {/* NEW SECTION — WHAT YOU CAN EXPECT */}
+      <section className="section" style={{ borderTop: "1px solid var(--border)" }}>
         <div className="container">
-          <div className="section-header">
-            <span className="section-label">FAQ</span>
-            <h2 className="section-title">Common questions</h2>
+          <div className="section-header reveal" ref={expectRef}>
+            <h2 className="section-title">What you can expect</h2>
           </div>
-          <div className="process-faq">
-            {faqs.map((faq, i) => (
-              <FaqItem key={i} faq={faq} index={i} />
-            ))}
+          <div className="expect-grid">
+            <div className="expect-card">
+              <h3 className="expect-title">Clear communication</h3>
+              <p className="expect-desc">I'll keep you involved and make the process easy to understand.</p>
+            </div>
+            <div className="expect-card">
+              <h3 className="expect-title">Your feedback matters</h3>
+              <p className="expect-desc">The website is refined based on your feedback throughout the project.</p>
+            </div>
+            <div className="expect-card">
+              <h3 className="expect-title">No cookie-cutter approach</h3>
+              <p className="expect-desc">The website is shaped around your business instead of forcing your business into a template.</p>
+            </div>
+            <div className="expect-card">
+              <h3 className="expect-title">Room to grow</h3>
+              <p className="expect-desc">We can start with the essentials and expand the website later.</p>
+            </div>
           </div>
         </div>
       </section>
@@ -101,84 +180,14 @@ export default function ProcessPage() {
       <section className="page-cta-section">
         <div className="container">
           <div className="page-cta-box">
-            <h2>Ready to kick things off?</h2>
-            <p>Step 1 is just a conversation. Let's talk about your project.</p>
+            <h2>Ready to build something together?</h2>
+            <p>Tell me about your business, what you need and where you'd like to take it. We'll figure out the next step together.</p>
             <Link to="/contact" className="btn btn-primary">
-              Start With Step 1 <HiArrowUpRight />
+              Let's Talk <HiArrowUpRight />
             </Link>
           </div>
         </div>
       </section>
-    </div>
-  );
-}
-
-function ProcessPageStep({ step, index, isLast }) {
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.unobserve(el); } },
-      { threshold: 0.1 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      className={`process-timeline-step${visible ? " visible" : ""}`}
-      style={{ transitionDelay: `${index * 100}ms` }}
-    >
-      <div className="process-timeline-left">
-        <div className="process-timeline-number">{step.number}</div>
-        {!isLast && <div className="process-timeline-line" aria-hidden="true" />}
-      </div>
-      <div className="process-timeline-content">
-        <span className="process-card-tag-dot" aria-hidden="true" />
-        <span className="process-tag-inline">{step.tag}</span>
-        <h3 className="process-timeline-title">{step.title}</h3>
-        <p className="process-timeline-description">{step.description}</p>
-      </div>
-    </div>
-  );
-}
-
-function FaqItem({ faq, index }) {
-  const [open, setOpen] = useState(false);
-  const ref = useReveal();
-
-  return (
-    <div 
-      className="reveal" 
-      ref={ref}
-      style={{ transitionDelay: `${(index || 0) * 50}ms` }}
-    >
-      <div className={`faq-item ${open ? 'is-open' : ''}`}>
-        <button
-          className="faq-question"
-          onClick={() => setOpen((p) => !p)}
-          aria-expanded={open}
-          type="button"
-        >
-          <span>{faq.q}</span>
-          <span className="faq-chevron" aria-hidden="true">{open ? "—" : "+"}</span>
-        </button>
-        <div 
-          className="faq-answer-wrapper" 
-          aria-hidden={!open}
-        >
-          <div className="faq-answer-inner">
-            <div className="faq-answer">
-              {faq.a}
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

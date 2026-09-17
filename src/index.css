@@ -3946,3 +3946,195 @@ html:has(.home-snap-container) {
   }
 }
 
+/* =============================================
+   NEW REDESIGN LAYOUTS
+   ============================================= */
+
+/* Services Page - What I Build Grid */
+.services-type-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.service-type-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.service-type-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(9, 43, 58, 0.04);
+}
+.service-type-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+.service-type-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+.service-type-meta {
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+.service-type-meta h4 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
+  margin-bottom: 12px;
+}
+.service-type-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.service-type-list li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.service-type-list li::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* Services Page - Why Work With Me (Philosophy) */
+.philosophy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--border);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.philosophy-item {
+  background: var(--bg);
+  padding: 32px 0;
+  display: grid;
+  grid-template-columns: 80px 1fr 2fr;
+  gap: 24px;
+  align-items: flex-start;
+}
+.philosophy-num {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-dark);
+  font-family: monospace;
+}
+.philosophy-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+.philosophy-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Services & Process Page - Future Support (3 columns) */
+.future-support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.future-support-card {
+  padding: 32px;
+  border-left: 1px solid var(--border);
+}
+.future-support-card:first-child {
+  border-left: none;
+  padding-left: 0;
+}
+.future-support-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.future-support-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Process Page - What to expect (4 points) */
+.expect-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.expect-card {
+  background: var(--bg-surface);
+  padding: 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+.expect-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.expect-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .services-type-grid {
+    grid-template-columns: 1fr;
+  }
+  .philosophy-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 24px 0;
+  }
+  .philosophy-num {
+    margin-bottom: 8px;
+  }
+  .future-support-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .future-support-card {
+    border-left: none;
+    border-bottom: 1px solid var(--border);
+    padding: 24px 0;
+  }
+  .future-support-card:last-child {
+    border-bottom: none;
+  }
+  .expect-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .expect-grid {
+    grid-template-columns: 1fr;
+  }
+}

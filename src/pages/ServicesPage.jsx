@@ -1,16 +1,13 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
-import services from "../data/services";
+import { useState, useEffect } from "react";
 import industries from "../data/industries";
-import pricing from "../data/pricing";
-import { HiCheck, HiArrowLeft, HiArrowUpRight, HiCheckBadge } from "react-icons/hi2";
+import { HiArrowLeft, HiArrowUpRight, HiCheckBadge } from "react-icons/hi2";
 import useReveal from "../hooks/useReveal";
 
 export default function ServicesPage() {
   const headerRef = useReveal();
   const location = useLocation();
 
-  // Scroll to industry picker if a hash is present
   useEffect(() => {
     if (location.hash) {
       const id = location.hash.slice(1);
@@ -22,6 +19,11 @@ export default function ServicesPage() {
     }
   }, [location.hash]);
 
+  const whatIBuildRef = useReveal();
+  const philosophyRef = useReveal();
+  const industryRef = useReveal();
+  const futureRef = useReveal();
+
   return (
     <div className="page-wrapper">
       {/* Page Hero */}
@@ -31,12 +33,10 @@ export default function ServicesPage() {
             <HiArrowLeft /> Back to Home
           </Link>
           <div className="page-hero-content reveal" ref={headerRef}>
-            <span className="section-label">What I Can Offer</span>
+            <span className="section-label">WHAT I CAN OFFER</span>
             <h1 className="page-hero-title">Services</h1>
             <p className="page-hero-subtitle">
-              Every service is tailored to your business goals — no templates,
-              no cookie-cutter results. Here's what I build and how each one
-              serves your customers.
+              Every website is tailored to your business goals — from the first idea to future updates and improvements.
             </p>
           </div>
         </div>
@@ -45,14 +45,120 @@ export default function ServicesPage() {
       {/* What I Build */}
       <section className="section">
         <div className="container">
-          <div className="section-header">
-            <span className="section-label">Service Types</span>
+          <div className="section-header reveal" ref={whatIBuildRef}>
+            <span className="section-label">SERVICE TYPES</span>
             <h2 className="section-title">What I build</h2>
+            <p className="section-subtitle">
+              Whether you're starting from scratch or improving an existing website, I focus on building something useful, clear and easy to grow.
+            </p>
           </div>
-          <div className="services-page-list">
-            {services.map((service, i) => (
-              <ServiceDetailCard key={service.number} service={service} index={i} />
-            ))}
+          
+          <div className="services-type-grid">
+            <div className="service-type-card">
+              <h3 className="service-type-title">Business Websites</h3>
+              <p className="service-type-desc">Professional websites that explain what you do, build trust with visitors and make it easy for customers to contact you.</p>
+              <div className="service-type-meta">
+                <h4>Suitable For</h4>
+                <ul className="service-type-list">
+                  <li>Small Businesses</li>
+                  <li>Service Businesses</li>
+                  <li>Consultants</li>
+                  <li>Agencies</li>
+                </ul>
+                <h4 style={{marginTop: '16px'}}>Key Features</h4>
+                <ul className="service-type-list">
+                  <li>Responsive design</li>
+                  <li>Clear service presentation</li>
+                  <li>Contact & enquiry options</li>
+                  <li>Mobile-first experience</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="service-type-card">
+              <h3 className="service-type-title">Portfolio Websites</h3>
+              <p className="service-type-desc">Websites designed to showcase your work, projects and experience in a way that makes your work easy to explore and understand.</p>
+              <div className="service-type-meta">
+                <h4>Suitable For</h4>
+                <ul className="service-type-list">
+                  <li>Photographers</li>
+                  <li>Designers</li>
+                  <li>Architects</li>
+                  <li>Freelancers</li>
+                </ul>
+                <h4 style={{marginTop: '16px'}}>Key Features</h4>
+                <ul className="service-type-list">
+                  <li>Project galleries</li>
+                  <li>Image-focused layouts</li>
+                  <li>Work categorisation</li>
+                  <li>Easy future updates</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="service-type-card">
+              <h3 className="service-type-title">Landing Pages</h3>
+              <p className="service-type-desc">Focused pages designed around a specific goal such as enquiries, bookings, campaigns, services or lead generation.</p>
+              <div className="service-type-meta">
+                <h4>Key Features</h4>
+                <ul className="service-type-list">
+                  <li>Clear messaging</li>
+                  <li>Strong call-to-actions</li>
+                  <li>Mobile-first design</li>
+                  <li>Fast loading</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="service-type-card">
+              <h3 className="service-type-title">Website Updates & Refresh</h3>
+              <p className="service-type-desc">Improve an existing website with a cleaner design, better mobile experience, updated content, improved performance or new sections.</p>
+              <div className="service-type-meta">
+                <h4>Key Features</h4>
+                <ul className="service-type-list">
+                  <li>Design refresh</li>
+                  <li>Responsive fixes</li>
+                  <li>Content updates</li>
+                  <li>Performance improvements</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* NEW SECTION — WHAT MAKES THE APPROACH DIFFERENT */}
+      <section className="section" style={{ background: "var(--bg-surface-2)" }}>
+        <div className="container">
+          <div className="section-header reveal" ref={philosophyRef}>
+            <span className="section-label">WHY WORK WITH ME</span>
+            <h2 className="section-title">More than just a website</h2>
+            <p className="section-subtitle">
+              I don't just build a website and hand it over. We work together throughout the project, and your website can continue to evolve as your business changes.
+            </p>
+          </div>
+          
+          <div className="philosophy-list">
+            <div className="philosophy-item">
+              <div className="philosophy-num">01</div>
+              <div className="philosophy-title">Built around your business</div>
+              <div className="philosophy-desc">No one-size-fits-all approach. The structure, content and design are shaped around your business, customers and goals.</div>
+            </div>
+            <div className="philosophy-item">
+              <div className="philosophy-num">02</div>
+              <div className="philosophy-title">Built to grow</div>
+              <div className="philosophy-desc">Start with what you need today and add new pages, content, features or integrations when you need them.</div>
+            </div>
+            <div className="philosophy-item">
+              <div className="philosophy-num">03</div>
+              <div className="philosophy-title">Support after launch</div>
+              <div className="philosophy-desc">Your website doesn't have to stay the same after launch. I can help with content changes, improvements, new sections and future updates.</div>
+            </div>
+            <div className="philosophy-item">
+              <div className="philosophy-num">04</div>
+              <div className="philosophy-title">Direct collaboration</div>
+              <div className="philosophy-desc">You communicate directly with the person designing and building your website, keeping feedback and decisions simple.</div>
+            </div>
           </div>
         </div>
       </section>
@@ -61,51 +167,61 @@ export default function ServicesPage() {
       <section
         className="section"
         id="industry-picker"
-        style={{ background: "var(--bg-surface)", borderTop: "1px solid var(--border)" }}
       >
         <div className="container">
-          <div className="section-header">
-            <span className="section-label">Ideal Clients</span>
-            <h2 className="section-title">Built for small businesses</h2>
+          <div className="section-header reveal" ref={industryRef}>
+            <span className="section-label">WHO I BUILD FOR</span>
+            <h2 className="section-title">Built around your kind of business</h2>
             <p className="section-subtitle">
-              Select your industry below to see exactly what I'd build for you —
-              specific features, deliverables, and typical outcomes.
+              Different businesses need different websites. Select an industry to see the type of website, features and content I would focus on.
             </p>
           </div>
           <IndustryPicker initialHash={location.hash} />
         </div>
       </section>
 
-      {/* Pricing */}
-      {/* <section className="section" style={{ borderTop: "1px solid var(--border)" }}>
+      {/* NEW SECTION — FUTURE SUPPORT */}
+      <section className="section" style={{ borderTop: "1px solid var(--border)" }}>
         <div className="container">
-          <div className="section-header">
-            <span className="section-label">Pricing</span>
-            <h2 className="section-title">Simple, transparent pricing</h2>
+          <div className="section-header reveal" ref={futureRef}>
+            <span className="section-label">AFTER LAUNCH</span>
+            <h2 className="section-title">Your website can grow with your business</h2>
             <p className="section-subtitle">
-              No hidden fees. Choose a package or let's discuss a custom scope.
+              Your first website doesn't need to contain everything. We can start with what your business needs today and add more as your needs change.
             </p>
           </div>
-          <div className="pricing-grid">
-            {pricing.map((plan) => (
-              <PricingCard key={plan.name} plan={plan} />
-            ))}
+          
+          <div className="future-support-grid">
+            <div className="future-support-card">
+              <h3 className="future-support-title">New Content</h3>
+              <p className="future-support-desc">Add new services, projects, images, testimonials and pages.</p>
+            </div>
+            <div className="future-support-card">
+              <h3 className="future-support-title">New Features</h3>
+              <p className="future-support-desc">Add booking systems, forms, galleries, integrations or other functionality when needed.</p>
+            </div>
+            <div className="future-support-card">
+              <h3 className="future-support-title">Ongoing Improvements</h3>
+              <p className="future-support-desc">Refresh the design, improve performance or update the experience as your business evolves.</p>
+            </div>
           </div>
-          <p className="pricing-note">
-            Final pricing depends on number of pages, design requirements and
-            functionality.
-          </p>
+          
+          <div style={{ marginTop: '40px' }}>
+            <Link to="/contact" className="section-header-link" style={{ fontSize: '1rem' }}>
+              Have something in mind? Let's talk <HiArrowUpRight />
+            </Link>
+          </div>
         </div>
-      </section> */}
+      </section>
 
       {/* CTA */}
       <section className="page-cta-section">
         <div className="container">
           <div className="page-cta-box">
-            <h2>Ready to get started?</h2>
-            <p>Tell me about your project and I'll get back to you with the next steps.</p>
+            <h2>Have a website in mind?</h2>
+            <p>Tell me what you're looking to build or improve, and we can figure out the right approach together.</p>
             <Link to="/contact" className="btn btn-primary">
-              Get in Touch <HiArrowUpRight />
+              Let's Build <HiArrowUpRight />
             </Link>
           </div>
         </div>
@@ -179,8 +295,8 @@ function IndustryPicker({ initialHash }) {
             </div>
 
             <div className="industry-panel-outcome">
-              <span className="industry-panel-outcome-label">Typical Outcome</span>
-              <span className="industry-panel-outcome-value">{active.outcome}</span>
+              <span className="industry-panel-outcome-label">Typical Focus</span>
+              <span className="industry-panel-outcome-value" style={{ fontWeight: 600, color: 'var(--accent-dark)' }}>{active.outcome}</span>
             </div>
           </div>
 
@@ -205,103 +321,14 @@ function IndustryPicker({ initialHash }) {
                     </div>
                   ))}
                 </div>
-                <div className="mock-content-outcome">
+                <div className="mock-content-outcome" style={{ background: 'var(--accent-glow)', color: 'var(--accent-dark)' }}>
                   <span>{active.outcome}</span>
-                  <span className="mock-badge">Delivered</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      {/* CTA below picker */}
-      <div className="industry-picker-cta">
-        <Link to="/contact" className="btn btn-primary">
-          Get a site like this <HiArrowUpRight />
-        </Link>
-      </div>
-    </div>
-  );
-}
-
-/* ── Service detail card ── */
-function ServiceDetailCard({ service, index }) {
-  const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
-  const Icon = service.icon;
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.unobserve(el);
-        }
-      },
-      { threshold: 0.1 }
-    );
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
-  return (
-    <div
-      ref={ref}
-      className={`services-page-card${visible ? " visible" : ""}`}
-      style={{ transitionDelay: `${index * 80}ms` }}
-    >
-      <div
-        className="services-page-card-icon"
-        style={{ "--card-accent": service.accent }}
-      >
-        <Icon />
-      </div>
-      <div className="services-page-card-body">
-        <span className="services-page-card-number">{service.number}</span>
-        <h3 className="services-page-card-title">{service.title}</h3>
-        <p className="services-page-card-description">{service.description}</p>
-        <div className="service-card-tags">
-          {service.tags.map((tag) => (
-            <span
-              key={tag}
-              className="service-card-tag"
-              style={{ "--card-accent": service.accent }}
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-/* ── Pricing card ── */
-function PricingCard({ plan }) {
-  return (
-    <div className={`pricing-card${plan.popular ? " popular" : ""}`}>
-      {plan.popular && <span className="pricing-badge">Most Popular</span>}
-      <h3 className="pricing-name">{plan.name}</h3>
-      <span className="pricing-label">{plan.label}</span>
-      <div className="pricing-price">{plan.price}</div>
-      <p className="pricing-description">{plan.description}</p>
-      <div className="pricing-features">
-        {plan.features.map((feature) => (
-          <div key={feature} className="pricing-feature">
-            <HiCheck className="pricing-feature-icon" aria-hidden="true" />
-            <span>{feature}</span>
-          </div>
-        ))}
-      </div>
-      <Link
-        to="/contact"
-        className={`btn pricing-cta ${plan.popular ? "btn-primary" : "btn-secondary"}`}
-      >
-        {plan.cta}
-      </Link>
     </div>
   );
 }

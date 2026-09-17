@@ -25,7 +25,7 @@ const industries = [
       { title: "Client Intake Questionnaire", detail: "Screens budget and room dimensions" },
       { title: "Local SEO Targeting", detail: "Rank for high-intent nearby zip codes" },
     ],
-    outcome: "+70% Qualified Inquiries",
+    outcome: "Showcase work • Build trust • Generate enquiries",
   },
   {
     id: "restaurants",
@@ -41,7 +41,7 @@ const industries = [
       { title: "Google Maps & Hours", detail: "Always-accurate local info" },
       { title: "Photo Showcase", detail: "Professional food & ambience gallery" },
     ],
-    outcome: "+50% Direct Bookings",
+    outcome: "Menu accessibility • Local discovery • Direct bookings",
   },
   {
     id: "clinics",
@@ -57,7 +57,7 @@ const industries = [
       { title: "Service & Treatment Pages", detail: "Clear, jargon-free descriptions" },
       { title: "Patient FAQ Section", detail: "Reduces front-desk calls" },
     ],
-    outcome: "+60% Online Appointments",
+    outcome: "Patient trust • Clear services • Online appointments",
   },
   {
     id: "salons",
@@ -73,7 +73,7 @@ const industries = [
       { title: "Team Portfolio", detail: "Stylist profiles and work galleries" },
       { title: "Google Reviews Integration", detail: "Show social proof automatically" },
     ],
-    outcome: "+45% Bookings via Website",
+    outcome: "Service menus • Stylist portfolios • Seamless booking",
   },
   {
     id: "photographers",
@@ -89,7 +89,7 @@ const industries = [
       { title: "Package Pricing Page", detail: "Clear tiers reduce negotiation" },
       { title: "Instagram Feed Integration", detail: "Always fresh, always current" },
     ],
-    outcome: "+80% Enquiry Conversion",
+    outcome: "Fast galleries • Lead capture • Personal branding",
   },
   {
     id: "consultants",
@@ -105,7 +105,7 @@ const industries = [
       { title: "Speaking / Media Page", detail: "Builds authority fast" },
       { title: "Discovery Call Booking", detail: "Streamlined intake process" },
     ],
-    outcome: "+65% Higher-Value Clients",
+    outcome: "Position authority • Case studies • Discovery calls",
   },
   {
     id: "construction",
@@ -121,7 +121,7 @@ const industries = [
       { title: "Licence & Insurance Display", detail: "Builds trust instantly" },
       { title: "Service Area Map", detail: "Rank locally for your region" },
     ],
-    outcome: "+55% Quality Lead Rate",
+    outcome: "Project proof • Quote generation • Local trust",
   },
   {
     id: "local-services",
@@ -137,7 +137,7 @@ const industries = [
       { title: "Service Area Pages", detail: "Rank in multiple locations" },
       { title: "Google Reviews Widget", detail: "Builds trust at a glance" },
     ],
-    outcome: "+90% More Local Calls",
+    outcome: "Local ranking • Instant contact • Service areas",
   },
 ];
 

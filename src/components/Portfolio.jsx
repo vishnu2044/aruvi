@@ -6,8 +6,8 @@ import useReveal from "../hooks/useReveal";
 export default function Portfolio() {
   const headerRef = useReveal();
 
-  // Show max 3 on home page
-  const preview = projects.slice(0, 3);
+  // Show max 3 most recent on home page
+  const preview = [...projects].reverse().slice(0, 3);
 
   return (
     <section className="section portfolio" id="portfolio">
